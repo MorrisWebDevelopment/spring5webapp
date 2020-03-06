@@ -46,9 +46,12 @@ public class BootStrapData implements CommandLineRunner {
         Book mock = new Book("Mocking Bird", "m12345");
         david.getBooks().add(mock);
         mock.getAuthors().add(david);
+        mock.setPublisher(publisher);
+        publisher.getBooks().add(mock);
 
         authorRepository.save(david);
         bookRepository.save(mock);
+        publisherRepository.save(publisher);
 
 
 
